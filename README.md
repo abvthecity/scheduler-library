@@ -15,15 +15,12 @@ var corpus = {...}; // see section "Data models"
 // synchronous:
 var transformed = scheduler.combinations.sync(corpus);
 
-// asynchronous (promise):
-scheduler.combinations.asyc(corpus).then(function (transformed) {
+// thenable:
+scheduler.combinations.asyc(corpus, function (piece) {
+  console.log(piece);
+}).then(function (transformed) {
   console.log(transformed);
 });
-
-// asynchronous (callbacks):
-scheduler.combinations.map(corpus, function (item) {
-  console.log(item);
-}, console.error);
 ```
 
 ## Data models
