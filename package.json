@@ -1,0 +1,31 @@
+{
+  "name": "scheduler-api",
+  "version": "0.0.1",
+  "description": "Transform a list of calendar schedules into metadata of availabilities and conflicts.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src --presets babel-preset-es2015 --out-dir dist",
+    "prepublish": "npm run build",
+    "test": "node tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ninjiangstar/scheduler-api.git"
+  },
+  "keywords": [
+    "schedule",
+    "conflict",
+    "calendar"
+  ],
+  "author": "Andrew Jiang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ninjiangstar/scheduler-api/issues"
+  },
+  "homepage": "https://github.com/ninjiangstar/scheduler-api#readme",
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0"
+  },
+  "dependencies": {}
+}
