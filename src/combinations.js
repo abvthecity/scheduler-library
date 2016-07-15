@@ -1,4 +1,5 @@
 import generate from './alg/generate';
+import Promise from 'promise';
 
 // synchronous
 function sync(corpus = {}, cb = () => {}) {
