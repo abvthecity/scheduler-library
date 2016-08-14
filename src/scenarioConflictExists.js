@@ -42,7 +42,7 @@ function dayConflictExists(dayA, dayB) {
     return false;
   }
 
-  return (dayA == dayB);
+  return (dayA === dayB);
 }
 
 function timeConflictExists(startA, endA, startB, endB) {
