@@ -1,4 +1,4 @@
-import scenariosCheckConflict from './scenariosCheckConflict';
+import scenarioConflictExists from './scenarioConflictExists';
 
 const generate = (corpus = {}, cb = () => {}, done = () => {}) => {
   let output = [];
@@ -43,14 +43,14 @@ funcion bt() {
 function backtrace(corpus = {}, heap = {}, index = 0, cb = () => {}, done = () => {}) {
 
   // check reached end
-  if (Object.keys(corpus).length == index) {
+  if (Object.keys(corpus).length === index) {
     // we are at the end of stack
     cb(clone(heap)); // send clone to output
     return;
   }
 
   let entityKey = Object.keys(corpus)[index];
-  let scenarios = corpus[entityKey].scenarios;
+  let scenarios = corpus[entityKey];
 
   for (var key in scenarios) {
     if (!add(entityKey, key, heap, corpus)) continue;
@@ -64,9 +64,9 @@ function backtrace(corpus = {}, heap = {}, index = 0, cb = () => {}, done = () =
 function add(entitykey, scenariokey, heap, corpus) {
   // check for conflicts first
   for (var key in heap) {
-    let scenario1 = corpus[key].scenarios[heap[key]];
-    let scenario2 = corpus[entitykey].scenarios[scenariokey];
-    if (scenariosCheckConflict(scenario1, scenario2)) {
+    let scenario1 = corpus[key][heap[key]];
+    let scenario2 = corpus[entitykey][scenariokey];
+    if (scenarioConflictExists(scenario1, scenario2)) {
       // there was a conflict
       return false;
     }
@@ -84,7 +84,9 @@ function remove(entitykey, heap) {
 function clone(obj) { // deep copy
   if (obj === null || typeof obj !== 'object') return obj;
   var temp = obj.constructor(); // give temp the original obj's constructor
-  for (var key in obj)
+  for (var key in obj) {
     temp[key] = clone(obj[key]);
+  }
+
   return temp;
 }

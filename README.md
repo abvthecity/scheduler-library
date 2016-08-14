@@ -16,7 +16,7 @@ var corpus = {...}; // see section "Data models"
 var transformed = scheduler.combinations.sync(corpus);
 
 // thenable:
-scheduler.combinations.asyc(corpus, function (piece) {
+scheduler.combinations.async(corpus, function (piece) {
   console.log(piece);
 }).then(function (transformed) {
   console.log(transformed);
@@ -34,14 +34,12 @@ Overall, we say that there are multiple independent `entities`, e.g. courses or 
 ```javascript
 var entities = {
   entityid1: {
-    meta: {},
     scenarios: {
       scenarioid1: {
         blockid1: {
-          meta: {},
-          startTime: #,
-          endTime: #,
-          day: #,
+          startTime: [],
+          endTime: [],
+          day: [],
         },
         blockid2: {...},
         ...
@@ -51,7 +49,6 @@ var entities = {
     }
   },
   entityid2: {
-    meta: {},
     scenarios: {},
   },
   ...
