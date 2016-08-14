@@ -35,12 +35,8 @@ Overall, we say that there are multiple independent `entities`, e.g. courses or 
 var entities = {
   entityid1: {
     scenarioid1: {
-      blockid1: {
-        startTime: [],
-        endTime: [],
-        day: [],
-      },
-      blockid2: {...},
+      blockid1: [{start: '10:30', end: '13:30', day ['M', 'W']}],
+      blockid2: [{...}],
       ...
     },
     scenarioid2: {},
