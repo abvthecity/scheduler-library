@@ -6,7 +6,7 @@ var normalize = function (coursedata, combinations) {
   for (var bucket of combinations) {
     entity[bucket] = {};
     for (var sectionId of bucket) {
-      entity[bucket][sectionId] = coursedata.sections[sectionId].block;
+      entity[bucket][sectionId] = coursedata.sections[sectionId].blocks;
     }
   }
 

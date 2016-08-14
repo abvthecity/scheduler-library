@@ -1,6 +1,6 @@
 {
   "name": "scheduler-api",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "Transform a list of calendar schedules into metadata of availabilities and conflicts.",
   "main": "dist/scheduler-api.js",
   "scripts": {
@@ -30,13 +30,15 @@
   "homepage": "https://github.com/ninjiangstar/scheduler-api#readme",
   "devDependencies": {
     "babel-cli": "^6.10.1",
-    "babel-preset-es2015": "^6.9.0"
+    "babel-preset-es2015": "^6.9.0",
+    "babel-register": "^6.11.6"
   },
   "dependencies": {
-    "babel-register": "^6.11.6",
+    "babel-cli": "^6.11.4",
+    "babel-preset-es2015": "^6.13.2",
     "bluebird": "^3.4.1",
     "lodash": "^4.15.0",
     "promise": "^7.1.1",
-    "trojan-course-api": "^2.0.5"
+    "trojan-course-api": "^2.0.8"
   }
 }
