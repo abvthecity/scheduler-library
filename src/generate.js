@@ -27,17 +27,17 @@ export default generate;
 
 /* BACKTRACKING ALGORITHM:
 funcion bt() {
-	if end, send to output.
-	else...
+  if end, send to output.
+  else...
   entity = get next entity
-	for each course scenario
+  for each course scenario
   {
-		add() scenario to current heap
+    add() scenario to current heap
     if add doesn't work, skip to the next scenario
     if add works, backtrace to next layer.
-		bt()
-		remove() scenario from current heap
-	}
+    bt()
+    remove() scenario from current heap
+  }
 } */
 
 function backtrace(corpus = {}, heap = {}, index = 0, cb = () => {}, done = () => {}) {

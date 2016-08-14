@@ -34,22 +34,20 @@ Overall, we say that there are multiple independent `entities`, e.g. courses or 
 ```javascript
 var entities = {
   entityid1: {
-    scenarios: {
-      scenarioid1: {
-        blockid1: {
-          startTime: [],
-          endTime: [],
-          day: [],
-        },
-        blockid2: {...},
-        ...
+    scenarioid1: {
+      blockid1: {
+        startTime: [],
+        endTime: [],
+        day: [],
       },
-      scenarioid2: {},
+      blockid2: {...},
       ...
-    }
+    },
+    scenarioid2: {},
+    ...
   },
   entityid2: {
-    scenarios: {},
+    ...
   },
   ...
 };
