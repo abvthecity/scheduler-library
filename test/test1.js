@@ -1,6 +1,6 @@
 var TROJAN = require('trojan-course-api');
 var normalize = require('./normalize');
-var scheduler = require('./../src/index');
+var scheduler = require('./index');
 
 var courses = ['CSCI-201', 'CSCI-270', 'EE-109'];
 

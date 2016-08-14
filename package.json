@@ -1,8 +1,8 @@
 {
   "name": "scheduler-api",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Transform a list of calendar schedules into metadata of availabilities and conflicts.",
-  "main": "dist/index.js",
+  "main": "dist/scheduler-api.js",
   "scripts": {
     "build": "babel src --presets babel-preset-es2015 --out-dir dist",
     "prepublish": "npm run build",
