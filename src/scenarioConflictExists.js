@@ -28,7 +28,9 @@ function blockConflictExists(blockA, blockB) {
     for (var b of blockB) {
       if (dayConflictExists(a.day, b.day)) {
         if (timeConflictExists(a.start, a.end, b.start, b.end)) {
-          return true;
+          if (!a.transient && !b.transient) {
+            return true;
+          }
         }
       }
     }
