@@ -26,7 +26,7 @@ function blockConflictExists(blockA, blockB) {
 
   for (var a of blockA) {
     for (var b of blockB) {
-      if (dayConflictExists(a.day, b.day)) {
+      if ('day' in a && 'day' in b && dayConflictExists(a.day, b.day)) {
         if (timeConflictExists(a.start, a.end, b.start, b.end)) {
           if (!a.transient && !b.transient) {
             return true;
