@@ -21,11 +21,14 @@ export default scenarioConflictExists;
 /* —————— dependent functions —————— */
 
 function blockConflictExists(blockA, blockB) {
+  if (!blockA || !blockB) return false; // if one doesn't exist
   if (!_.isArray(blockA)) blockA = [blockA];
   if (!_.isArray(blockB)) blockB = [blockB];
 
   for (var a of blockA) {
+    if (!a) continue;
     for (var b of blockB) {
+      if (!b) continue;
       if ('day' in a && 'day' in b && dayConflictExists(a.day, b.day)) {
         if (timeConflictExists(a.start, a.end, b.start, b.end)) {
           if (!a.transient && !b.transient) {
@@ -40,10 +43,7 @@ function blockConflictExists(blockA, blockB) {
 };
 
 function dayConflictExists(dayA, dayB) {
-  if (dayA === null || dayB === null) {
-    return false;
-  }
-
+  if (!dayA || !dayB) return false;
   return (dayA === dayB);
 }
 
